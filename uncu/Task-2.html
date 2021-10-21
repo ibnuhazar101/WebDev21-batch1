@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tailwind.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="bg-green-300 space-y-5 min-h-screen pt-16">
+      <div
+        class="
+          flex flex-col
+          lg:flex-row
+          bg-green-300
+          px-4
+          py-3
+          w-full
+          items-center
+          justify-evenly
+          space-y-5
+          lg:space-y-0
+        "
+      >
+        <div>
+          <p class="text-xl font-bold text-red-600">Team Dolphins</p>
+          <br />
+          <p>Score 1</p>
+          <input type="number" name="" id="scrD1" />
+          <p>Score 2</p>
+          <input type="number" name="" id="scrD2" />
+          <p>Score 3</p>
+          <input type="number" name="" id="scrD3" />
+        </div>
+
+        <div>
+          <p class="text-xl font-bold text-blue-600">Team Koalas</p>
+          <br />
+          <p>Score 1</p>
+          <input type="number" name="" id="scrK1" />
+          <p>Score 2</p>
+          <input type="number" name="" id="scrK2" />
+          <p>Score 3</p>
+          <input type="number" name="" id="scrK3" />
+        </div>
+      </div>
+
+      <div
+        class="
+          flex flex-col
+          lg:flex-row lg:space-x-10
+          items-center
+          justify-center
+        "
+      >
+        <div class="text-center">
+          <p class="font-bold">Tugas</p>
+          <p id="Results">Pemenang adalah</p>
+        </div>
+        <div class="text-center">
+          <p class="font-bold">Bonus</p>
+          <p id="Bonus1">Pemenang adalah</p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center space-x-5 bg-green-300">
+        <button class="bg-gray-200 px-3 py-3 rounded-xl" onclick="myFunction()">
+          Calculate
+        </button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    // sd = score team dolphins ke-
+    // sk = score team koalas ke-
+    function myFunction() {
+      const sd1 = parseInt(document.getElementById("scrD1").value);
+      const sd2 = parseInt(document.getElementById("scrD2").value);
+      const sd3 = parseInt(document.getElementById("scrD3").value);
+      //   console.log(sd1);
+      //   console.log(sd2);
+      //   console.log(sd3);
+
+      const sk1 = parseInt(document.getElementById("scrK1").value);
+      const sk2 = parseInt(document.getElementById("scrK2").value);
+      const sk3 = parseInt(document.getElementById("scrK3").value);
+      //   console.log(sk1);
+      //   console.log(sk2);
+      //   console.log(sk3);
+
+      const avsd = (sd1 + sd2 + sd3) / 3;
+      const avsk = (sk1 + sk2 + sk3) / 3;
+      //   console.log(avsd);
+      //   console.log(avsk);
+
+      let results;
+      if (avsd > avsk) {
+        results = "Dolphins Teams Win";
+      } else if (avsd === avsk) {
+        results = "Teams Dolphins Draw Teams Koalas";
+      } else {
+        results = "Koalas teams Win";
+      }
+
+      let bonus1;
+      if (avsd >= 100 && avsd > avsk) {
+        bonus1 = "Dolphins Teams Win";
+      } else if (avsk >= 100 && avsk > avsd) {
+        bonus1 = "Koalas teams Win";
+      } else if (avsk >= 100 && avsk === avsd) {
+        bonus1 = "Teams Dolphins Draw Teams Koalas";
+      } else {
+        bonus1 = "No Winner";
+      }
+
+      // avsd > avsk && avsd >= 100
+      //   ? (bonus1 = "Dolphins Teams Win")
+      //   : (bonus1 = "No winner");
+
+      // avsd < avsk && avsk >= 100
+      //   ? (bonus1 = "Koalas Teams Win")
+      //   : (bonus1 = "No winner");
+
+      // avsk === avsd && avsk >= 100
+      //   ? (bonus1 = "Teams Dolphins Draw Teams Koalas")
+      //   : (bonus1 = "No winner");
+      // console.log(bonus1);
+
+      document.getElementById("Results").innerHTML = results;
+      document.getElementById("Bonus1").innerHTML = bonus1;
+    }
+  </script>
+</html>
