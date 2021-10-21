@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>BMI</title>
+    </head>
+    <script>
+        //Data 1
+        // const markWeight = 78;
+        // const markHeight = 1.69;
+        // const johnWeight = 92;
+        // const johnHeight = 1.95;
+
+        //Data 2
+        const markWeight = 95;
+        const markHeight = 1.88;
+        const johnWeight = 85;
+        const johnHeight = 1.76;
+        
+        const Mark = markWeight / markHeight ** 2;
+        const John = johnWeight / johnHeight ** 2;
+
+        let markHigherBMI = false;
+        if(Mark > John){
+            markHigherBMI = true;
+        }
+
+        console.log('Mark has a higher BMI than John : ' + markHigherBMI);
+
+    </script>
+    <body>
+        <h1>BMI</h1>
+    </body>
+</html>
