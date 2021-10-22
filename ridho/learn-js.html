@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        let allScore = {
+            dolphins : {
+                test1 : [96, 108, 89],
+                test2 : [97, 112, 101],
+                test3 : [97, 112, 101],
+            },
+            koalas : {
+                test1 : [88, 91, 110],
+                test2 : [109, 92, 123],
+                test3 : [109, 95, 106]
+            }
+        }
+        let dolphinsFirstTotalScore = 0
+        let dolphinsSecondTotalScore = 0
+        let dolphinsThirdTotalScore = 0
+        let koalasFirstTotalScore = 0
+        let koalasSecondTotalScore = 0
+        let koalasThirdTotalScore = 0
+        // For Dolphins
+        for (i = 0; i < allScore.dolphins.test1.length; i++) {
+            dolphinsFirstTotalScore += allScore.dolphins.test1 [i]
+        }
+        console.log("Dolphins")
+        console.log("========")
+        console.log("Dolphin First Test Total Score = " + dolphinsFirstTotalScore)
+        console.log("Dolphin First Score Average = " + dolphinsFirstTotalScore / allScore.dolphins.test1.length)
+        console.log("================================================")
+
+        for (i = 0; i < allScore.dolphins.test2.length; i++) {
+            dolphinsSecondTotalScore += allScore.dolphins.test2 [i]
+        }
+        console.log("Dolphin Second Test Total Score = " + dolphinsSecondTotalScore)
+        console.log("Dolphin Second Score Average = " + dolphinsSecondTotalScore / allScore.dolphins.test2.length)
+        console.log("================================================")
+
+        for (i = 0; i < allScore.dolphins.test3.length; i++) {
+            dolphinsThirdTotalScore += allScore.dolphins.test3 [i]
+        }
+        console.log("Dolphin Third Test Total Score = " + dolphinsThirdTotalScore)
+        console.log("Dolphin Third Score Average = " + dolphinsThirdTotalScore / allScore.dolphins.test3.length)
+        console.log("================================================")
+
+        // for koalas
+        for (i = 0; i < allScore.koalas.test1.length; i++) {
+            koalasFirstTotalScore += allScore.koalas.test1 [i]
+        }
+        console.log("Koalas")
+        console.log("=======")
+        console.log("Koala First Test Total Score = " + koalasFirstTotalScore)
+        console.log("Koala First Score Average = " + koalasFirstTotalScore/ allScore.koalas.test1.length)
+        console.log("================================================")
+
+        for (i = 0; i < allScore.koalas.test2.length; i++) {
+            koalasSecondTotalScore += allScore.koalas.test2 [i]
+        }
+        console.log("Koala Second Test Total Score = " + koalasSecondTotalScore)
+        console.log("Koala Second Score Average = " + koalasSecondTotalScore/ allScore.koalas.test2.length)
+        console.log("================================================")
+
+        for (i = 0; i < allScore.koalas.test3.length; i++) {
+            koalasThirdTotalScore += allScore.koalas.test3 [i]
+        }
+        console.log("Koala Third Test Total Score = " + koalasThirdTotalScore)
+        console.log("Koala Third Score Average = " + koalasThirdTotalScore/ allScore.koalas.test3.length)
+        console.log("================================================")
+        
+        console.log("First Test Winner")
+        if (dolphinsFirstTotalScore === koalasFirstTotalScore) {
+            console.log("Dolphins and Koalas Scores Draw")
+        } else if(dolphinsFirstTotalScore > koalasFirstTotalScore) {
+            console.log("Dolphin Wins")
+        }else {
+            console.log("Koalas Wins")
+        }
+        
+        console.log("================================================")
+        console.log("Second Test Winner")
+        if (dolphinsSecondTotalScore === koalasSecondTotalScore) {
+            console.log("Dolphins and Koalas Scores Draw")
+        } else if(dolphinsSecondTotalScore > koalasSecondTotalScore) {
+            console.log("Dolphin Wins")
+        }else {
+            console.log("Koalas Wins")
+        }
+        console.log("================================================")
+        console.log("Third Test Winner")
+        if (dolphinsThirdTotalScore === koalasThirdTotalScore) {
+            console.log("Dolphins and Koalas Scores Draw")
+        } else if(dolphinsThirdTotalScore > koalasThirdTotalScore) {
+            console.log("Dolphin Wins")
+        }else {
+            console.log("Koalas Wins")
+        }
+
+
+        // let dolphinsScore = [96, 108, 89]
+        // let koalasScore = [88, 91, 110]
+        // let dolphinsTotalScore = 0
+        // let koalasTotalScore = 0
+        // for (let i = 0; i < dolphinsScore.length; i++) {
+        //     dolphinsTotalScore += dolphinsScore [i]
+        // }
+        // console.log("Dolphins Total Score = " + dolphinsTotalScore)
+        // console.log("Avegare Dolphins Score = " + dolphinsTotalScore / dolphinsScore.length)
+        // for (let i = 0; i < koalasScore.length; i++) {
+        //     koalasTotalScore += koalasScore [i]
+        // }
+        // console.log("Koalas Total Score = " + koalasTotalScore)
+        // console.log("Avegare Koalas Score = " + koalasTotalScore / koalasScore.length)
+    </script>
+</body>
+</html>
