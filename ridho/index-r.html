@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="koala kolom" id="koala">
+            <h1 class="title score-title">Score Koala</h1>
+            <h1 class="title">0</h1>
+            <div class="input-container">
+                <input class="input" type="text" placeholder="first score" id="first-score-koala">
+                <input class="input" type="text" placeholder="second score" id="second-score-koala">
+                <input class="input" type="text" placeholder="third score" id="third-score-koala">
+            </div>
+        </div>
+        <div class="dolphin kolom">
+            <h1 class="title score-title">Score Dolphin</h1>
+            <h1 class="title">0</h1>
+            <div class="input-container">
+                <input class="input" type="text" placeholder="first score" id="first-score-dolphin">
+                <input class="input" type="text" placeholder="second score" id="second-score-dolphin">
+                <input class="input" type="text" placeholder="third score" id="third-score-dolphin">
+            </div>
+        </div>
+    </div>
+    <div>
+        <button onclick="Calculate()" class="calculate-button">Calculate</button>
+    </div>
+
+
+
+    <script>
+        const koala = document.getElementsByClassName("koala")[0]
+        const dolphin = document.getElementsByClassName("dolphin")[0]
+        function Calculate() {
+            let scoreKoala1 = parseInt(document.getElementById("first-score-koala").value)
+            let scoreKoala2 = parseInt(document.getElementById("second-score-koala").value)
+            let scoreKoala3 = parseInt(document.getElementById("third-score-koala").value)
+            let scoreDolphin1 = parseInt(document.getElementById("first-score-dolphin").value)
+            let scoreDolphin2 = parseInt(document.getElementById("second-score-dolphin").value)
+            let scoreDolphin3 = parseInt(document.getElementById("third-score-dolphin").value)
+            let title = document.getElementsByClassName("title")
+            let avgKoala = 0
+            let avgDolphin = 0
+            
+            avgKoala = (scoreKoala1 + scoreKoala2 + scoreKoala3)/3 
+            avgDolphin = (scoreDolphin1 + scoreDolphin2 + scoreDolphin3)/3
+            title[1].innerHTML = avgKoala.toFixed(2)
+            title[3].innerHTML = avgDolphin.toFixed(2)
+
+            
+            if (avgKoala >= 100 && avgKoala > avgDolphin) {
+                koala.style.backgroundColor = "green";
+                dolphin.style.backgroundColor = "red";
+            } else if (avgDolphin >= 100 && avgDolphin > avgKoala){
+                koala.style.backgroundColor = "red";
+                dolphin.style.backgroundColor = "green";
+            } else if (avgKoala >= 100 && avgKoala == avgDolphin) {
+                koala.style.backgroundColor = "yellow";
+                dolphin.style.backgroundColor = "yellow";
+            } else {
+                koala.style.backgroundColor = "gray";
+                dolphin.style.backgroundColor = "gray";
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .kolom {
+        border: 1px solid black;
+    }
+
+    .koala {
+        background-color: gray;
+        height: 500px;
+    }
+
+    .dolphin {
+        background-color: gray;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 48px;
+    }
+
+    .score-title {
+        margin-top: 100px;
+    }
+
+    .input {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .calculate-button {
+        display: block;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding: 10px 20px;
+    }
+</style>
